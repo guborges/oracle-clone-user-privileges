@@ -45,3 +45,39 @@ Instead of applying grants directly, the script **only generates** the GRANT com
 
 ```sql
 sqlplus / as sysdba @clone_permissoes.sql USUARIO_ORIGEM USUARIO_DESTINO
+```
+## The script will generate an output file:
+
+clone_USUARIO_ORIGEM_to_USUARIO_DESTINO.sql
+
+---
+## After reviewing, you can apply it manually:
+
+@clone_USUARIO_ORIGEM_to_USUARIO_DESTINO.sql
+
+Example output
+
+```sql
+GRANT "DBA" TO "USUARIO_DESTINO";
+GRANT CREATE SESSION TO "USUARIO_DESTINO";
+GRANT UNLIMITED TABLESPACE TO "USUARIO_DESTINO";
+GRANT SELECT ON "SCHEMA"."TABELA" TO "USUARIO_DESTINO";
+```
+---
+## Extensions (ideas)
+
+This model can be extended to also clone:
+
+Tablespace quotas
+
+Profiles
+
+Proxy connect
+
+Custom security policies / specific grants
+
+---
+## File structure
+oracle-clone-user-privileges/
+├── clone_permissoes.sql
+└── README.md
