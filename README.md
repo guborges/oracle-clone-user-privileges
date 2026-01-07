@@ -78,6 +78,8 @@ Custom security policies / specific grants
 
 ---
 ## File structure
+```sql
 oracle-clone-user-privileges/
 ├── clone_permissoes.sql
 └── README.md
+```
